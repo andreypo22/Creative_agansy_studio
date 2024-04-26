@@ -1,0 +1,84 @@
+.achievements {
+  &__container {
+    padding-top: 35px;
+    padding-bottom: 35px;
+
+    @include tablet {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-right: max(50px, calc((100% - var(--content-width)) / 2));
+      padding-left: max(50px, calc((100% - var(--content-width)) / 2));
+    }
+
+    @include small-tablet {
+      padding-right: max(15px, calc((100% - var(--content-width)) / 2));
+      padding-left: max(15px, calc((100% - var(--content-width)) / 2));
+    }
+  }
+
+  &__list {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-gap: 148px;
+
+   @include tablet {
+    display: flex;
+    justify-content: space-between;
+    grid-gap: 0;
+   }
+
+   @include small-tablet {
+    flex-wrap: wrap;
+   }
+  }
+
+  &__item {
+    position: relative;
+    grid-column: 1 span;
+
+    @include small-tablet {
+      min-width: 200px;
+     }
+
+    &-count {
+      font-weight: 600;
+      font-size: 70px;
+      line-height: 140%;
+      background: linear-gradient(180.03deg, rgba(255, 255, 255, 0.2) 4.35%, rgba(255, 255, 255, 0.8) 21.87%, rgba(255, 255, 255, 0.2) 42.17%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: var(--color-back);
+      -webkit-text-stroke: 4px transparent;
+      color: rgb(255,240,240);
+    }
+
+    &-text {
+      position: absolute;
+      bottom: 9px;
+      font-family: 'PlusJakartaSans';
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 140%;
+      color: var(--color-white);
+
+      &--1 {
+        right: -55px;
+      }
+
+      &--2 {
+        right: -30px;
+      }
+
+      &--3 {
+        right: -37px;
+      }
+
+      &--4 {
+        right: -2px;
+      }
+
+      @include small-tablet {
+        right: 0;
+      }
+    }
+  }
+}

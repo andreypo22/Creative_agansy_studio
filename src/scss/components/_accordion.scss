@@ -1,0 +1,95 @@
+.accordion {
+	width: 100%;
+	margin-bottom: 20px;
+
+  &__control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+    border: 1px solid var(--color-shaft);
+    background-color: var(--color-shaft);
+    cursor: pointer;
+
+    @include mobile {
+      padding: 20px 10px;
+    }
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &.focus-visible {
+      & .accordion__title {
+        color: var(--color-orange);
+      }
+
+      & .accordion__icon {
+        stroke: var(--color-orange);
+      }
+    }
+
+    @include hover {
+      & .accordion__title {
+        color: var(--color-orange);
+      }
+
+      & .accordion__icon {
+        stroke: var(--color-orange);
+      }
+    }
+
+    &:active {
+      & .accordion__title {
+        color: var(--color-text);
+      }
+
+      & .accordion__icon {
+        stroke: var(--color-text);
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: 'PlusJakartaSans';
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 144%;
+    color: var(--color-white);
+    transition: color .2s ease-in-out;
+
+    @include mobile {
+      font-size: 14px;
+      text-align: start;
+    }
+  }
+
+  &__icon {
+    width: 12px;
+    height: 7px;
+    stroke: var(--color-white);
+    fill: none;
+    transition: stroke .2s ease-in-out;
+  }
+
+  &__content {
+    display: none;
+    padding: 20px;
+    font-family: 'PlusJakartaSans';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: var(--color-text);
+    background-color: var(--color-shaft);
+  }
+
+  &.open .accordion__content {
+    display: block;
+  }
+
+  &.open .accordion__icon {
+    transform: rotate(180deg);
+  }
+}

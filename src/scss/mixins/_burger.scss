@@ -1,0 +1,110 @@
+/* stylelint-disable */
+
+.burger {
+  --burger-width: 16px;
+  --burger-height: 12px;
+  --burger-line-height: 2px;
+
+  position: relative;
+  border: none;
+  margin-right: 15px;
+  padding: 0;
+  width: var(--burger-width);
+  height: var(--burger-height);
+  color: var(--color-white);
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 7;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: var(--burger-line-height);
+    background-color: currentColor;
+    z-index: 2;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    top: calc(100% - var(--burger-line-height));
+  }
+
+  &__line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: var(--burger-line-height);
+    background-color: currentColor;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &__back {
+    position: absolute;
+    top: -16px;
+    left: -14px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background-color: var(--color-dark);
+    z-index: 1;
+    transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
+  }
+
+  &--active {
+    &::before {
+      top: 50%;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    &::after {
+      top: 50%;
+      transform: rotate(-45deg);
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    .burger__line {
+      transform: scale(0);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    & .burger__back {
+      background-color: var(--color-text);
+    }
+  }
+
+  &.focus-visible {
+    .burger__back {
+      background-color: var(--color-orange);
+    }
+  }
+
+  &.focus-visible.burger--active {
+    .burger__back {
+      background-color: var(--color-black);
+    }
+  }
+
+  &:hover {
+    .burger__back {
+      background-color: var(--color-orange);
+    }
+  }
+
+  &:active {
+    .burger__back {
+      background-color: var(--color-text);
+    }
+  }
+}

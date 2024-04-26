@@ -1,0 +1,233 @@
+.digital {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 20px;
+    padding-top: 72px;
+    padding-bottom: 100px;
+
+    @include tablet {
+      padding-right: max(50px, calc((100% - var(--content-width)) / 2));
+      padding-left: max(50px, calc((100% - var(--content-width)) / 2));
+    }
+
+    @include small-tablet {
+      padding-right: max(15px, calc((100% - var(--content-width)) / 2));
+      padding-left: max(15px, calc((100% - var(--content-width)) / 2));
+    }
+
+    @include mobile {
+      grid-gap: 0;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__content {
+    grid-column: 6 span;
+    display: flex;
+    flex-direction: column;
+
+    @include small-tablet {
+      grid-column: 12 span;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+
+    &-text {
+      margin-bottom: 7px;
+      font-family: 'PlusJakartaSans';
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 160%;
+      letter-spacing: 0.15em;
+      color: var(--color-text);
+      text-transform: uppercase;
+    }
+
+    &-title {
+      margin: 0;
+      margin-bottom: 32px;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 135%;
+      color: var(--color-white);
+
+      @include mobile {
+        margin-bottom: 10px;
+        font-size: 20px;
+      }
+    }
+
+    &-descr {
+      margin: 0;
+      font-family: 'PlusJakartaSans';
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 140%;
+      color: var(--color-grey);
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__accordion {
+    grid-column: 6 span;
+    padding-top: 6px;
+
+    @include small-tablet {
+      grid-column: 12 span;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__schedules {
+    grid-column: 6 span;
+    display: flex;
+    flex-direction: column;
+
+    @include small-tablet {
+      grid-column: 12 span;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+
+    &-content {
+      &:not(:last-child) {
+        margin-bottom: 22px;
+      }
+    }
+
+    &-title {
+      margin: 0;
+      margin-bottom: 8px;
+      font-family: 'PlusJakartaSans';
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 140%;
+      color: var(--color-white);
+
+      @include mobile {
+        margin-bottom: 26px;
+        font-size: 16px;
+      }
+    }
+
+    &-line {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 7px;
+      background-color: var(--color-shaft);
+
+      @include mobile {
+        height: 4px;
+      }
+
+      &::before {
+        content: '';
+        height: 100%;
+        background-color: var(--color-orange);
+      }
+
+      &--1::before {
+        width: 79%;
+      }
+
+      &--2::before {
+        width: 96%;
+      }
+    }
+
+    &-percent {
+      position: absolute;
+      top: -32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'PlusJakartaSans';
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 140%;
+      color: var(--color-text);
+
+      &--1 {
+        left: calc(79% - 35px/2);
+      }
+
+      &--2 {
+        left: calc(96% - 35px/2);
+      }
+    }
+
+    &-arrow {
+      width: 10px;
+      height: 8px;
+      fill: var(--color-orange);
+    }
+  }
+
+  &__users {
+    grid-column: 6 span;
+    display: flex;
+    align-items: flex-start;
+
+    @include small-tablet {
+      grid-column: 12 span;
+    }
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    &-count {
+      display: flex;
+      flex-direction: column;
+      margin-right: 40px;
+      font-weight: 600;
+      font-size: 60px;
+      color: var(--color-white);
+
+      @include mobile {
+        margin-bottom: 10px;
+        font-size: 40px;
+      }
+    }
+
+    &-tomonthly {
+      font-family: 'PlusJakartaSans';
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 70%;
+      color: var(--color-grey);
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+
+    &-descr {
+      margin: 0;
+      padding-top: 5px;
+      font-family: 'PlusJakartaSans';
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 140%;
+      color: var(--color-grey);
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+  }
+}

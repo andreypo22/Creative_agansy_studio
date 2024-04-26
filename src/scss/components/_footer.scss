@@ -1,0 +1,431 @@
+.footer {
+  background-color: var(--color-black);
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 49px;
+    padding-top: 100px;
+
+    @include tablet {
+      padding-right: max(50px, calc((100% - var(--content-width)) / 2));
+      padding-left: max(50px, calc((100% - var(--content-width)) / 2));
+    }
+
+    @include small-tablet {
+      padding-right: max(15px, calc((100% - var(--content-width)) / 2));
+      padding-left: max(15px, calc((100% - var(--content-width)) / 2));
+    }
+
+    @include mobile {
+      grid-gap: 0;
+      padding-top: 30px;
+    }
+  }
+
+  &__info {
+    grid-column: 3 span;
+
+    @include tablet {
+      grid-column: 6 span;
+    }
+
+    @include mobile {
+      grid-column: 12 span;
+      margin-bottom: 20px;
+    }
+
+    &-logo {
+      display: inline-block;
+      margin-bottom: 20px;
+
+      @include mobile {
+        margin-bottom: 10px;
+      }
+    }
+
+    &-descr {
+      margin: 0;
+      margin-bottom: 30px;
+      font-family: 'PlusJakartaSans';
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 140%;
+      color: var(--color-grey);
+    }
+
+    &-tel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: auto;
+      width: 150px;
+      height: 40px;
+      font-family: 'PlusJakartaSans';
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 182.5%;
+      border: 1px solid var(--color-orange);
+      color: var(--color-white);
+      background-color: var(--color-orange);
+      transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
+
+      &.focus-visible {
+        color: var(--color-orange);
+        background-color: var(--color-shaft);
+
+        & .footer__info-icon {
+          fill: var(--color-orange);
+        }
+      }
+
+      @include hover {
+        color: var(--color-orange);
+        background-color: var(--color-shaft);
+
+        & .footer__info-icon {
+          fill: var(--color-orange);
+        }
+      }
+
+      &:active {
+        border-color: var(--color-white);
+        color: var(--color-white);
+        background-color: var(--color-text);
+
+        & .footer__info-icon {
+          fill: var(--color-white);
+        }
+      }
+    }
+
+    &-icon {
+      margin-right: 10px;
+      width: 14px;
+      height: 14px;
+      fill: var(--color-white);
+      transition: fill .2s ease-in-out;
+    }
+  }
+
+  &__links {
+    grid-column: 3 span;
+    padding-top: 8px;
+
+    @include tablet {
+      grid-column: 6 span;
+      justify-self: end;
+    }
+
+    @include mobile {
+      grid-column: 12 span;
+      margin-bottom: 20px;
+      justify-self: start;
+    }
+
+    &-title {
+      display: inline-block;
+      margin-bottom: 32px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 140%;
+      text-transform: uppercase;
+      color: var(--color-white);
+
+      @include mobile {
+        margin-bottom: 10px;
+      }
+    }
+
+    &-list {
+      min-height: 135px;
+      column-count: 2;
+      column-gap: 8px;
+    }
+
+    &-item {
+      width: max-content;
+    }
+
+    &-link {
+      font-family: 'PlusJakartaSans';
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 182.5%;
+      color: var(--color-grey);
+      transition: color .2s ease-in-out;
+
+      &.focus-visible {
+        color: var(--color-orange);
+      }
+
+      @include hover {
+        color: var(--color-orange);
+      }
+
+      &:active {
+        color: var(--color-white);
+      }
+    }
+  }
+
+  &__contacts {
+    grid-column: 6 span;
+    padding-top: 67px;
+
+    @include tablet {
+      grid-column: 12 span;
+      padding-top: 0;
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+
+      @include mobile {
+        flex-wrap: wrap;
+      }
+    }
+
+    &-item {
+      position: relative;
+
+      @include mobile {
+        min-width: 110px;
+      }
+
+      &:not(:last-child) {
+        margin-right: 22px;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 3px;
+          right: -10px;
+          width: 2px;
+          height: 18px;
+          background-color: var(--color-dark);
+        }
+      }
+    }
+
+    &-link {
+      display: table;
+      font-family: 'PlusJakartaSans';
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 140%;
+
+      &--facebook {
+        background: linear-gradient(180deg, #0052FF 33.93%, #FFFFFF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: var(--color-text);
+
+        &.focus-visible {
+          background: linear-gradient(180deg, #fff 33.93%, #0052FF 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        @include hover {
+          background: linear-gradient(180deg, #fff 33.93%, #0052FF 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        &:active {
+          -webkit-text-fill-color: var(--color-white);
+        }
+      }
+
+      &--twitter {
+        background: linear-gradient(180deg, #09bbFF 33.93%, #FFFFFF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: var(--color-text);
+
+        &.focus-visible {
+          background: linear-gradient(180deg, #fff 33.93%, #09bbFF 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        @include hover {
+          background: linear-gradient(180deg, #fff 33.93%, #09bbFF 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        &:active {
+          -webkit-text-fill-color: var(--color-white);
+        }
+      }
+
+      &--dribbble {
+        background: linear-gradient(180deg, #cc3385 33.93%, #FFFFFF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: var(--color-text);
+
+        &.focus-visible {
+          background: linear-gradient(180deg, #fff 33.93%, #cc3385 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        @include hover {
+          background: linear-gradient(180deg, #fff 33.93%, #cc3385 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        &:active {
+          -webkit-text-fill-color: var(--color-white);
+        }
+      }
+
+      &--instagram {
+        background: linear-gradient(180deg, #ea4c89 33.93%, #FFFFFF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: var(--color-text);
+
+        &.focus-visible {
+          background: linear-gradient(180deg, #fff 33.93%, #ea4c89 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        @include hover {
+          background: linear-gradient(180deg, #fff 33.93%, #ea4c89 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        &:active {
+          -webkit-text-fill-color: var(--color-white);
+        }
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 140%;
+      color: var(--color-white);
+
+      @include mobile {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &-mail {
+      position: relative;
+      color: var(--color-white);
+      transition: color .2s ease-in-out;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--color-white);
+        transition: background-color .2s ease-in-out;
+      }
+
+      &.focus-visible {
+        color: var(--color-orange);
+
+        &::after {
+          background-color: var(--color-orange);
+        }
+      }
+
+      @include hover {
+        color: var(--color-orange);
+
+        &::after {
+          background-color: var(--color-orange);
+        }
+      }
+
+      &:active {
+        color: var(--color-text);
+
+        &::after {
+          background-color: var(--color-text);
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    grid-column: 12 span;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    &-info {
+      font-family: 'PlusJakartaSans';
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 140%;
+      color: var(--color-text);
+
+      @include mobile {
+        margin-bottom: 10px;
+        font-size: 10px;
+      }
+    }
+
+    &-list {
+      display: flex;
+    }
+
+    &-item {
+      &:not(:last-child) {
+        margin-right: 50px;
+      }
+    }
+
+    &-link {
+      font-family: 'PlusJakartaSans';
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 140%;
+      color: var(--color-text);
+      transition: color .2s ease-in-out;
+
+      @include mobile {
+        font-size: 10px;
+      }
+
+      &.focus-visible {
+        color: var(--color-orange);
+      }
+
+      @include hover {
+        color: var(--color-orange);
+      }
+
+      &:active {
+        color: var(--color-white);
+      }
+    }
+  }
+}

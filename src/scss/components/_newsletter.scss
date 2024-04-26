@@ -1,0 +1,132 @@
+.newsletter {
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 55px;
+    padding-bottom: 50px;
+
+    @include tablet {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      padding-right: max(50px, calc((100% - var(--content-width)) / 2));
+      padding-left: max(50px, calc((100% - var(--content-width)) / 2));
+    }
+
+    @include small-tablet {
+      padding-right: max(15px, calc((100% - var(--content-width)) / 2));
+      padding-left: max(15px, calc((100% - var(--content-width)) / 2));
+    }
+
+    &::before {
+      content: url(../../img/newsletter-icon-1.svg);
+      position: absolute;
+      top: 55%;
+      left: 110px;
+
+      @include mobile {
+        top: 96%;
+        left: 20px;
+      }
+    }
+
+    &::after {
+      content: url(../../img/newsletter-icon-2.svg);
+      position: absolute;
+      top: -3px;
+      right: 84px;
+
+      @include mobile {
+        top: -20px;
+        right: 20px;
+      }
+    }
+  }
+
+  &__question {
+    margin-bottom: 50px;
+    font-family: 'PlusJakartaSans';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-text);
+
+    @include mobile {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 38px;
+    max-width: 670px;
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 135%;
+    text-align: center;
+    color: var(--color-white);
+
+    @include small-tablet {
+      font-size: 40px;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: var(--color-dark);
+    transition: background-color .2s ease-in-out;
+
+    @include small-tablet {
+      width: 150px;
+      height: 150px;
+    }
+
+    &.focus-visible {
+      background-color: var(--color-orange);
+    }
+
+    @include hover {
+      background-color: var(--color-orange);
+    }
+
+    &:active {
+      background-color: var(--color-text);
+    }
+
+    &-text {
+      margin-bottom: 20px;
+      font-family: 'PlusJakartaSans';
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 140%;
+      letter-spacing: 0.18em;
+      color: var(--color-white);
+
+      @include small-tablet {
+        margin-bottom: 0;
+        font-size: 12px;
+      }
+    }
+
+    &-arrow {
+      width: 26px;
+      height: 26px;
+      fill: var(--color-white);
+    }
+  }
+}

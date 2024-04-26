@@ -1,0 +1,170 @@
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+
+    @include small-tablet {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 29px;
+
+      @include small-tablet {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+
+    &-name {
+      margin-right: 4px;
+      font-family: 'PlusJakartaSans';
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 140%;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--color-white);
+      transition: color .2s ease-in-out;
+
+      @include small-tablet {
+        font-size: 12px;
+      }
+    }
+
+    &-arrow {
+      width: 10px;
+      height: 10px;
+      fill: var(--color-white);
+      transition: fill .2s ease-in-out;
+
+      &-active {
+        fill: var(--color-text);
+        transform: rotate(180deg);
+      }
+    }
+
+    &-active {
+      .nav__btn-name {
+        color: var(--color-text);
+      }
+    }
+
+    &.focus-visible {
+      .nav__btn {
+        &-name {
+          color: var(--color-orange);
+        }
+
+        &-arrow {
+          fill: var(--color-orange);
+        }
+      }
+    }
+
+    @include hover {
+      .nav__btn {
+        &-name {
+          color: var(--color-orange);
+        }
+
+        &-arrow {
+          fill: var(--color-orange);
+        }
+      }
+    }
+
+    &:active {
+      .nav__btn {
+        &-name {
+          color: var(--color-text);
+        }
+
+        &-arrow {
+          fill: var(--color-text);
+        }
+      }
+    }
+  }
+
+  &__dropdown {
+    display: none;
+    position: absolute;
+    top: 22px;
+    left: 0;
+    padding: 10px 20px;
+    background-color: var(--color-shaft);
+
+    &-active {
+      display: block;
+    }
+
+    &-item {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+
+    &-link {
+      font-family: "PlusJakartaSans";
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 182.5%;
+      color: var(--color-white);
+      transition: color .2s ease-in-out;
+
+      @include small-tablet {
+        font-size: 12px;
+      }
+
+      &.focus-visible {
+        color: var(--color-orange);
+      }
+
+      @include hover {
+        color: var(--color-orange);
+      }
+
+      &:active {
+        color: var(--color-text);
+      }
+    }
+  }
+
+  &__link {
+    font-family: 'PlusJakartaSans';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--color-white);
+    transition: color .2s ease-in-out;
+
+    @include small-tablet {
+      font-size: 12px;
+    }
+
+    &.focus-visible {
+      color: var(--color-orange);
+    }
+
+    @include hover {
+      color: var(--color-orange);
+    }
+
+    &:active {
+      color: var(--color-text);
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.busines {
+  &__container {
+    display: flex;
+    justify-content: center;
+
+    @include tablet {
+      padding-right: max(50px, calc((100% - var(--content-width)) / 2));
+      padding-left: max(50px, calc((100% - var(--content-width)) / 2));
+    }
+
+    @include small-tablet {
+      padding-right: max(15px, calc((100% - var(--content-width)) / 2));
+      padding-left: max(15px, calc((100% - var(--content-width)) / 2));
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    padding-top: 76px;
+    padding-bottom: 80px;
+    width: 100%;
+
+    @include tablet {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    grid-column: 1 span;
+
+    @include mobile {
+      grid-column: 2 span;
+    }
+
+    & .busines-card__content {
+      left: 26px;
+
+      @include mobile {
+        left: 10px;
+      }
+    }
+  }
+}

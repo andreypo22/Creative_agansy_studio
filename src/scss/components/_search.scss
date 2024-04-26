@@ -1,0 +1,141 @@
+.search {
+  &__box {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    height: 50px;
+    width: 0;
+    transition: all 0.7188s cubic-bezier(0.77, 0, 0.18, 1);
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 25px);
+    width: 50px;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 15px;
+    cursor: pointer;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.7188s cubic-bezier(0.77, 0, 0.18, 1);
+
+    & svg {
+      transition: fill .2s ease-in-out;
+    }
+
+    &.focus-visible {
+      svg {
+        fill: var(--color-orange);
+      }
+    }
+
+    @include hover {
+      svg {
+        fill: var(--color-orange);
+      }
+    }
+
+    &:active {
+      svg {
+        fill: var(--color-text);
+      }
+    }
+  }
+
+  &__bar {
+    position: absolute;
+    left: 50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 0 10px 10px 0;
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.7188s cubic-bezier(0.77, 0, 0.18, 1);
+  }
+
+  &__input {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0.5rem 2.1rem 0.5rem 0;
+    font-size: 1rem;
+    border-radius: 0 10px 10px 0;
+    outline: none;
+    z-index: 3;
+    background-color: transparent;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+}
+
+.close__icon {
+  position: absolute;
+  right: 5%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+  height: 100%;
+  align-self: flex-end;
+
+  & svg path {
+    stroke: transparent;
+    transition: fill .2s ease-in-out, stroke .2s ease-in-out;
+  }
+
+  @include hover {
+    svg path {
+      fill: var(--color-orange);
+      stroke: var(--color-orange);
+    }
+  }
+
+  &.focus-visible {
+    svg path {
+      fill: var(--color-orange);
+      stroke: var(--color-orange);
+    }
+  }
+}
+
+.close-icon svg {
+  cursor: pointer;
+}
+
+.active__icon {
+  left: 0;
+  cursor: auto;
+  background-color: #fff;
+}
+
+.active__bar {
+  display: flex;
+  opacity: 1;
+  width: 250px;
+
+  @include mobile {
+    width: 200px;
+  }
+}
+
+.active__box {
+  background-color: #fff;
+  width: 300px;
+
+  @include mobile {
+    width: 250px;
+  }
+}
+

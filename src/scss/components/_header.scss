@@ -1,0 +1,175 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    @include tablet {
+      flex-wrap: wrap;
+      padding-right: max(50px, calc((100% - var(--content-width)) / 2));
+      padding-left: max(50px, calc((100% - var(--content-width)) / 2));
+    }
+
+    @include small-tablet {
+      padding-right: max(15px, calc((100% - var(--content-width)) / 2));
+      padding-left: max(15px, calc((100% - var(--content-width)) / 2));
+    }
+
+    @include mobile {
+      justify-content: flex-end;
+    }
+  }
+
+  &__logo {
+    margin-right: auto;
+
+    @include tablet {
+      margin-bottom: 10px;
+      width: 370px;
+    }
+
+    @include mobile {
+      width: 86%;
+    }
+  }
+
+  &__nav {
+    margin-right: 46px;
+
+    @include tablet {
+      order: 4;
+    }
+
+    @include small-tablet {
+      margin-right: 0;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 53px;
+
+    @include mobile {
+      margin-right: 40px;
+      order: 3;
+    }
+
+    &-item {
+      position: relative;
+
+      &:not(:last-child) {
+        margin-right: 45px;
+      }
+
+      &:nth-child(2) {
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    &-link {
+      &.focus-visible {
+        svg {
+          stroke: var(--color-orange);
+        }
+      }
+
+      @include hover {
+        svg {
+          stroke: var(--color-orange);
+        }
+      }
+
+      &:active {
+        svg {
+          stroke: var(--color-text);
+        }
+      }
+    }
+
+    &-image {
+      width: 18px;
+      height: 18px;
+      stroke: var(--color-white);
+      transform: translateY(2px);
+      transition: stroke .2s ease-in-out;
+    }
+
+    &-number {
+      position: absolute;
+      top: -2px;
+      right: -7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 13px;
+      height: 13px;
+      font-size: 10px;
+      border-radius: 50%;
+      color: var(--color-white);
+      background-color: var(--color-orange);
+    }
+  }
+
+  // &__form {
+  //   display: flex;
+  //   align-items: center;
+
+  //   &-btn {
+  //     &.focus-visible {
+  //       svg {
+  //         stroke: var(--color-orange);
+  //       }
+  //     }
+
+  //     @include hover {
+  //       svg {
+  //         stroke: var(--color-orange);
+  //       }
+  //     }
+
+  //     &:active {
+  //       svg {
+  //         stroke: var(--color-text);
+  //       }
+  //     }
+  //   }
+
+  //   &-image {
+  //     width: 18px;
+  //     height: 18px;
+  //     stroke: var(--color-white);
+  //   }
+  // }
+
+  // &__burger {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   flex-shrink: 0;
+  //   width: 45px;
+  //   height: 45px;
+  //   border-radius: 50%;
+  //   background-color: var(--color-dark);
+  //   z-index: 2;
+  //   transition: background-color .3s ease-in-out;
+
+  //   &--active {
+  //     background-color: var(--color-orange);
+  //   }
+  // }
+}
+
+

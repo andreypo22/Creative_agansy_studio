@@ -1,0 +1,31 @@
+<section class="newsletter">
+  <div class="container newsletter__container">
+    <span class="newsletter__question">Have you project in mind?</span>
+    <h2 class="newsletter__title">Let’s Make Something Great Together!</h2>
+    <button class="btn-reset newsletter__btn" data-graph-path="contacts" aria-label="contact with us">
+      <span class="newsletter__btn-text">CONTACT WITH US</span>
+      <svg class="newsletter__btn-arrow">
+        <use xlink:href="img/sprite.svg#contact-arrow"></use>
+      </svg>
+    </button>
+    <div class="graph-modal">
+      <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="contacts">
+        <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+        <div class="graph-modal__content">
+          <form action="#" class="form" method="POST" enctype="multipart/form-data">
+            <label class="form__label">
+              <input type="text" name="name" class="input-reset form__input form__input-name" data-validate-field="name" placeholder="Name">
+            </label>
+            <label class="form__label">
+              <input type="email" name="email" class="input-reset form__input form__input-email" data-validate-field="email" placeholder="Email">
+            </label>
+            <label class="form__label">
+              <input type="tel" name="tel" class="input-reset form__input form__input-tel" data-validate-field="tel" placeholder="Tel number">
+            </label>
+            <button class="btn-reset form__btn" aria-label="send">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

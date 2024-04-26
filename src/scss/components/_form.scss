@@ -1,0 +1,136 @@
+.graph-modal {
+  &__container {
+    padding: 60px 40px;
+    width: 700px;
+    background-color: var(--color-dark);
+
+    @include small-tablet {
+      width: 500px;
+      padding: 40px 20px;
+    }
+
+    @include mobile {
+      width: 290px;
+      padding: 40px 10px;
+    }
+  }
+
+  &__close {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-image: url(../../img/modal-close.svg);
+    background-repeat: no-repeat;
+    transition: background-color .2s ease-in-out;
+
+    @include mobile {
+      width: 20px;
+      height: 20px;
+    }
+
+    &.focus-visible {
+      background-color: var(--color-black);
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 40px;
+
+    @include mobile {
+      margin-bottom: 30px;
+    }
+
+    & .just-validate-error-label {
+      position: absolute;
+      top: -20px;
+      left: 10px;
+
+      @include mobile {
+        top: -16px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 16px 20px;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: border-color .2s ease-in-out;
+
+    @include mobile {
+      padding: 10px 16px;
+      font-size: 12px;
+    }
+
+    &::placeholder {
+      font-family: 'PlusJakartaSans';
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 140%;
+      color: var(--color-text);
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+
+    &.focus-visible {
+      border-color: var(--color-orange);
+    }
+
+    @include hover {
+      border-color: var(--color-orange);
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 50px;
+    width: fit-content;
+    color: var(--color-white);
+    background-color: var(--color-orange);
+    border: 2px solid var(--color-orange);
+    border-radius: 5px;
+    font-family: 'PlusJakartaSans';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    color: var(--color-white);
+    transition: background-color .2s ease-in-out, color .2s ease-in-out, border-color .2s ease-in-out;
+
+    @include mobile {
+      padding: 10px 30px;
+      font-size: 12px;
+    }
+
+    &.focus-visible {
+      background-color: transparent;
+      color: var(--color-orange)
+    }
+
+    @include hover {
+      background-color: transparent;
+      color: var(--color-orange)
+    }
+
+    &:active {
+      color: var(--color-white);
+      border-color: var(--color-white);
+    }
+  }
+}
+

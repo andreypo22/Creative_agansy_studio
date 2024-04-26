@@ -1,0 +1,121 @@
+.partners {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 61px;
+    padding-bottom: 60px;
+
+    @include tablet {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    @include mobile {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+
+  &__image {
+    margin-bottom: 90px;
+
+    @include tablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include tablet {
+      width: 100%;
+      padding-right: max(50px, calc((100% - var(--content-width)) / 2));
+      padding-left: max(50px, calc((100% - var(--content-width)) / 2));
+    }
+
+    @include small-tablet {
+      padding-right: max(15px, calc((100% - var(--content-width)) / 2));
+      padding-left: max(15px, calc((100% - var(--content-width)) / 2));
+    }
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 50px;
+    font-family: 'PlusJakartaSans';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: 0.15em;
+    text-align: center;
+    color: var(--color-text);
+
+    @include tablet {
+      margin-bottom: 30px;
+    }
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 53px;
+
+      @include tablet {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+
+    @include tablet {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    @include small-tablet {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.focus-visible {
+      .partners__icon {
+        fill: var(--color-orange);
+      }
+    }
+
+    @include hover {
+      .partners__icon {
+        fill: var(--color-orange);
+      }
+    }
+
+    &:active {
+      .partners__icon {
+        fill: var(--color-text);
+      }
+    }
+  }
+
+  &__icon {
+    width: 120px;
+    height: 72px;
+    fill: var(--color-white);
+    transition: fill .2s ease-in-out;
+  }
+}

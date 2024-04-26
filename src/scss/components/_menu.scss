@@ -1,0 +1,64 @@
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-left: var(--container-offset);
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-dark);
+  transform: translateY(-100%);
+  transition: transform .3s ease-in-out;
+  z-index: 6;
+
+  @include tablet {
+    padding-left: 50px;
+  }
+
+  @include small-tablet {
+    padding-left: 15px;
+  }
+
+  &__list {
+    display: none;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-left: 50px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__link {
+    font-family: 'PlusJakartaSans';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.07em;
+    color: var(--color-white);
+    opacity: 1;
+    transition: color .2s ease-in-out;
+
+    &.focus-visible {
+      color: var(--color-orange);
+    }
+
+    @include hover {
+      color: var(--color-orange);
+    }
+
+    &:active {
+      color: var(--color-text);
+    }
+  }
+
+  &--active {
+    transform: translateY(0);
+
+    & .menu__list {
+      display: flex;
+    }
+  }
+}
